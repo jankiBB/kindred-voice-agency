@@ -59,7 +59,7 @@ export function CaseStudies() {
             className="overflow-hidden rounded-3xl border bg-card shadow-soft lg:sticky"
             style={{ top: `${88 + i * 26}px`, marginBottom: i < studies.length - 1 ? "1.5rem" : 0 }}
           >
-            <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="grid gap-0 lg:h-[520px] lg:grid-cols-[0.85fr_1.15fr]">
               <img
                 src={s.image}
                 alt={`${s.brand} social media case study`}
