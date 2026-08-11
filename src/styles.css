@@ -194,3 +194,26 @@
     animation: none;
   }
 }
+
+@utility input-base {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--color-foreground);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: var(--color-muted-foreground);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent) 28%, transparent);
+  }
+}
