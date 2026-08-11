@@ -23,7 +23,7 @@ const quotes = [
 export function Testimonials() {
   const [i, setI] = useState(0);
   const go = (d: number) => setI((p) => (p + d + quotes.length) % quotes.length);
-  const q = quotes[i];
+  const q = quotes[i]!;
 
   return (
     <section className="border-y bg-card py-20 lg:py-28">
