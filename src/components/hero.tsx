@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight, Instagram } from "lucide-react";
+import { ArrowRight, Instagram, Star } from "lucide-react";
+import heroShoot from "@/assets/hero-shoot.jpg";
+import heroLoop from "@/assets/hero-loop.mp4.asset.json";
+import c2 from "@/assets/creative-2.jpg";
+import c5 from "@/assets/creative-5.jpg";
 
 const services = [
   "Social media management",
@@ -27,26 +31,27 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
+    <section id="top" className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-[120px]"
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/25 blur-[120px]"
       />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-20 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16 lg:px-8">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground">
             <Instagram className="h-3.5 w-3.5 text-foreground" />
             Social media marketing agency in Mumbai
           </span>
 
-          <h1 className="mt-6 max-w-3xl font-display text-[2.8rem] leading-[1.02] font-semibold sm:text-6xl lg:text-[4.6rem]">
-            Social media that makes your brand{" "}
-            <span className="highlight-accent">impossible to scroll past</span>.
+          <h1 className="mt-6 font-display text-[2.6rem] leading-[1.02] font-semibold sm:text-6xl lg:text-[4.4rem]">
+            We build social media presence brands are actually{" "}
+            <span className="highlight-accent">remembered</span> for.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Bombay Blokes builds strategy, content and community for brands that want a social
-            presence people actually remember.
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Bombay Blokes is a social media marketing agency for brands that want strategy, content
+            and creative direction under one roof — a feed that looks premium, posts consistently,
+            and turns followers into customers.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
@@ -62,13 +67,51 @@ export function Hero() {
             ))}
           </ul>
 
-          <a
-            href="#audit"
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground transition-transform duration-200 hover:scale-[1.03]"
-          >
-            Get your free social audit
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          <div className="mt-8 flex gap-3">
+            <div className="relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
+              <video
+                src={heroLoop.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={heroShoot}
+                aria-label="Bombay Blokes content shoot in progress"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex w-[28%] flex-col gap-3">
+              {[c2, c5].map((src, i) => (
+                <div
+                  key={i}
+                  className="relative flex-1 overflow-hidden rounded-2xl border shadow-soft"
+                >
+                  <img
+                    src={src}
+                    alt="Social media creative produced by Bombay Blokes"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+
+
+          <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
+            {[
+              ["1000+", "Projects delivered"],
+              ["150+", "Brands partnered"],
+              ["40M+", "Organic views"],
+              ["4.9", "Average rating"],
+            ].map(([v, l]) => (
+              <div key={l}>
+                <div className="font-display text-2xl font-semibold sm:text-3xl">{v}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{l}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div id="audit" className="lg:sticky lg:top-24">
@@ -140,6 +183,27 @@ export function Hero() {
                 No decks, no spam. A real strategist replies within 24 hours.
               </p>
             </form>
+          </div>
+
+          <div className="mt-4 flex items-center gap-4 rounded-3xl border bg-card p-3 shadow-soft">
+            <img
+              src={heroShoot}
+              alt="Bombay Blokes social media content shoot for a beauty brand"
+              width={1200}
+              height={1504}
+              className="h-20 w-20 shrink-0 rounded-2xl object-cover sm:h-24 sm:w-24"
+            />
+            <div className="min-w-0">
+              <div className="flex items-center gap-1 text-accent">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </div>
+              <p className="mt-1.5 text-sm leading-snug text-foreground/80">
+                “Our feed finally looks like the brand we've been trying to build for years.”
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">Kaushik Shah — D2C founder</p>
+            </div>
           </div>
         </div>
       </div>
