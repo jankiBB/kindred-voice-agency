@@ -67,8 +67,8 @@ export function Hero() {
             ))}
           </ul>
 
-          <div className="mt-8 grid h-[260px] grid-cols-3 gap-3 sm:h-[320px]">
-            <div className="relative col-span-2 h-full overflow-hidden rounded-3xl border shadow-lift">
+          <div className="mt-8 flex gap-3">
+            <div className="relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
               <video
                 src={heroLoop.url}
                 autoPlay
@@ -80,18 +80,23 @@ export function Hero() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
-            <div className="grid h-full grid-rows-2 gap-3">
+            <div className="flex w-[28%] flex-col gap-3">
               {[c2, c5].map((src, i) => (
-                <img
+                <div
                   key={i}
-                  src={src}
-                  alt="Social media creative produced by Bombay Blokes"
-                  loading="lazy"
-                  className="h-full w-full rounded-2xl border object-cover"
-                />
+                  className="relative flex-1 overflow-hidden rounded-2xl border shadow-soft"
+                >
+                  <img
+                    src={src}
+                    alt="Social media creative produced by Bombay Blokes"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
               ))}
             </div>
           </div>
+
 
 
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
