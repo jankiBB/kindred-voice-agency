@@ -44,14 +44,14 @@ export function Hero() {
           </span>
 
           <h1 className="mt-6 font-display text-[2.6rem] leading-[1.02] font-semibold sm:text-6xl lg:text-[4.4rem]">
-            We build social media presence brands are actually{" "}
-            <span className="highlight-accent">remembered</span> for.
+            Social media that makes your brand{" "}
+            <span className="highlight-accent">impossible to scroll past</span>.
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Bombay Blokes is a social media marketing agency for brands that want strategy, content
-            and creative direction under one roof — a feed that looks premium, posts consistently,
-            and turns followers into customers.
+            Bombay Blokes is a social media marketing agency in Mumbai. Strategy, content production
+            and community — one team running your feed so it looks premium, posts every week, and
+            turns attention into customers.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
@@ -68,7 +68,7 @@ export function Hero() {
           </ul>
 
           <div className="mt-8 flex gap-3">
-            <div className="relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
+            <div className="group relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
               <video
                 src={heroLoop.url}
                 autoPlay
@@ -77,8 +77,20 @@ export function Hero() {
                 playsInline
                 poster={heroShoot}
                 aria-label="Bombay Blokes content shoot in progress"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full scale-105 object-cover transition-transform duration-700 group-hover:scale-100"
               />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-foreground/55 via-transparent to-transparent"
+              />
+              <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
+                <p className="font-display text-sm font-semibold text-background sm:text-base">
+                  Shot, edited and published in-house
+                </p>
+                <span className="shrink-0 rounded-full bg-accent px-2.5 py-1 text-[10px] font-semibold tracking-wide text-accent-foreground uppercase">
+                  Live studio
+                </span>
+              </div>
             </div>
             <div className="flex w-[28%] flex-col gap-3">
               {[c2, c5].map((src, i) => (
@@ -90,14 +102,12 @@ export function Hero() {
                     src={src}
                     alt="Social media creative produced by Bombay Blokes"
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}
             </div>
           </div>
-
-
 
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
             {[
@@ -113,6 +123,7 @@ export function Hero() {
             ))}
           </div>
         </div>
+
 
         <div id="audit" className="lg:sticky lg:top-24">
           <div className="rounded-3xl border bg-card p-6 shadow-lift sm:p-8">
