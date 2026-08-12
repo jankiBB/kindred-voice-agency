@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight, Instagram, Star, Play } from "lucide-react";
+import { ArrowRight, Instagram, Star } from "lucide-react";
 import heroShoot from "@/assets/hero-shoot.jpg";
 import heroLoop from "@/assets/hero-loop.mp4.asset.json";
 import c2 from "@/assets/creative-2.jpg";
@@ -31,16 +31,11 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-20">
+    <section id="top" className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[560px] w-[560px] rounded-full bg-accent/25 blur-[130px]"
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/25 blur-[120px]"
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-[-20%] left-[-15%] h-[420px] w-[420px] rounded-full bg-accent/10 blur-[120px]"
-      />
-
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16 lg:px-8">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground">
@@ -48,22 +43,22 @@ export function Hero() {
             Social media marketing agency in Mumbai
           </span>
 
-          <h1 className="mt-6 font-display text-[2.7rem] leading-[0.98] font-semibold tracking-[-0.02em] sm:text-6xl lg:text-[4.6rem]">
-            Social media that makes your brand{" "}
-            <span className="highlight-accent">impossible to scroll past</span>.
+          <h1 className="mt-6 font-display text-[2.6rem] leading-[1.02] font-semibold sm:text-6xl lg:text-[4.4rem]">
+            We build social media presence brands are actually{" "}
+            <span className="highlight-accent">remembered</span> for.
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Bombay Blokes is a social media marketing agency in Mumbai. Strategy, content production
-            and community — one team owning your entire presence, so you post like a brand every
-            week, not whenever there's time.
+            Bombay Blokes is a social media marketing agency for brands that want strategy, content
+            and creative direction under one roof — a feed that looks premium, posts consistently,
+            and turns followers into customers.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {[
               "Strategy, content & community",
               "In-house creative studio",
-              "Reporting you can actually read",
+              "Reporting you can read",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-foreground/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -72,8 +67,8 @@ export function Hero() {
             ))}
           </ul>
 
-          <div className="mt-9 flex gap-3">
-            <div className="group relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
+          <div className="mt-8 flex gap-3">
+            <div className="relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
               <video
                 src={heroLoop.url}
                 autoPlay
@@ -82,35 +77,27 @@ export function Hero() {
                 playsInline
                 poster={heroShoot}
                 aria-label="Bombay Blokes content shoot in progress"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-foreground/55 via-transparent to-transparent"
-              />
-              <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 text-[11px] font-medium backdrop-blur-sm sm:bottom-4 sm:left-4">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-accent">
-                  <Play className="h-2.5 w-2.5 fill-current text-accent-foreground" />
-                </span>
-                Shot this week in our Mumbai studio
-              </div>
             </div>
             <div className="flex w-[28%] flex-col gap-3">
               {[c2, c5].map((src, i) => (
                 <div
                   key={i}
-                  className="group relative flex-1 overflow-hidden rounded-2xl border shadow-soft"
+                  className="relative flex-1 overflow-hidden rounded-2xl border shadow-soft"
                 >
                   <img
                     src={src}
                     alt="Social media creative produced by Bombay Blokes"
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
               ))}
             </div>
           </div>
+
+
 
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
             {[
@@ -133,8 +120,8 @@ export function Hero() {
               <div className="min-w-0">
                 <h2 className="font-display text-2xl font-semibold">Get a free social audit</h2>
                 <p className="mt-1.5 text-sm text-muted-foreground">
-                  We'll review your profiles, content and competitors — and send back the three
-                  things we'd change first.
+                  We'll review your profiles, content and competitors — and send back what we'd
+                  change first.
                 </p>
               </div>
               <span className="shrink-0 rounded-full bg-accent px-3 py-1 text-[11px] font-semibold text-accent-foreground">
