@@ -68,7 +68,7 @@ export function Hero() {
           </ul>
 
           <div className="mt-8 grid h-[260px] grid-cols-3 gap-3 sm:h-[320px]">
-            <div className="col-span-2 h-full overflow-hidden rounded-3xl border shadow-lift">
+            <div className="relative col-span-2 h-full overflow-hidden rounded-3xl border shadow-lift">
               <video
                 src={heroLoop.url}
                 autoPlay
@@ -77,7 +77,7 @@ export function Hero() {
                 playsInline
                 poster={heroShoot}
                 aria-label="Bombay Blokes content shoot in progress"
-                className="h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div className="grid h-full grid-rows-2 gap-3">
