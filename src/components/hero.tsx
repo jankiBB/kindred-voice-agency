@@ -2,6 +2,9 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight, Instagram, Star } from "lucide-react";
 import heroShoot from "@/assets/hero-shoot.jpg";
+import heroLoop from "@/assets/hero-loop.mp4.asset.json";
+import c2 from "@/assets/creative-2.jpg";
+import c5 from "@/assets/creative-5.jpg";
 
 const services = [
   "Social media management",
