@@ -67,8 +67,8 @@ export function Hero() {
             ))}
           </ul>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
-            <div className="col-span-2 overflow-hidden rounded-3xl border shadow-lift">
+          <div className="mt-8 grid h-[260px] grid-cols-3 gap-3 sm:h-[320px]">
+            <div className="col-span-2 h-full overflow-hidden rounded-3xl border shadow-lift">
               <video
                 src={heroLoop.url}
                 autoPlay
@@ -77,10 +77,10 @@ export function Hero() {
                 playsInline
                 poster={heroShoot}
                 aria-label="Bombay Blokes content shoot in progress"
-                className="aspect-[16/10] w-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="grid grid-rows-2 gap-3">
+            <div className="grid h-full grid-rows-2 gap-3">
               {[c2, c5].map((src, i) => (
                 <img
                   key={i}
@@ -92,6 +92,7 @@ export function Hero() {
               ))}
             </div>
           </div>
+
 
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
             {[
