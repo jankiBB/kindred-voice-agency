@@ -67,6 +67,32 @@ export function Hero() {
             ))}
           </ul>
 
+          <div className="mt-8 grid grid-cols-3 gap-3">
+            <div className="col-span-2 overflow-hidden rounded-3xl border shadow-lift">
+              <video
+                src={heroLoop.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={heroShoot}
+                aria-label="Bombay Blokes content shoot in progress"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </div>
+            <div className="grid grid-rows-2 gap-3">
+              {[c2, c5].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt="Social media creative produced by Bombay Blokes"
+                  loading="lazy"
+                  className="h-full w-full rounded-2xl border object-cover"
+                />
+              ))}
+            </div>
+          </div>
+
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
             {[
               ["1000+", "Projects delivered"],
