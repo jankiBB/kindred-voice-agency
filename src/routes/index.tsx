@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { Hero } from "@/components/hero";
 import { LogoMarquee } from "@/components/logo-marquee";
-import { Statement } from "@/components/statement";
 import { Services } from "@/components/services";
 import { CreativeWall } from "@/components/creative-wall";
 import { CaseStudies } from "@/components/case-studies";
@@ -66,16 +65,14 @@ function Index() {
       <main>
         <Hero />
         <LogoMarquee />
-        <Statement />
-        <CreativeWall />
         <Services />
+        <CreativeWall />
         <CaseStudies />
         <WhyUs />
-        <Testimonials />
         <Process />
+        <Testimonials />
         <Faq />
         <FinalCta />
-
       </main>
       <SiteFooter />
     </div>

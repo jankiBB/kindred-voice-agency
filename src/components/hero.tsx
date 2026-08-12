@@ -2,9 +2,6 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight, Instagram, Star } from "lucide-react";
 import heroShoot from "@/assets/hero-shoot.jpg";
-import heroLoop from "@/assets/hero-loop.mp4.asset.json";
-import c2 from "@/assets/creative-2.jpg";
-import c5 from "@/assets/creative-5.jpg";
 
 const services = [
   "Social media management",
@@ -66,38 +63,6 @@ export function Hero() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-8 flex gap-3">
-            <div className="relative aspect-[4/3] flex-1 overflow-hidden rounded-3xl border shadow-lift sm:aspect-[16/10]">
-              <video
-                src={heroLoop.url}
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster={heroShoot}
-                aria-label="Bombay Blokes content shoot in progress"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-            <div className="flex w-[28%] flex-col gap-3">
-              {[c2, c5].map((src, i) => (
-                <div
-                  key={i}
-                  className="relative flex-1 overflow-hidden rounded-2xl border shadow-soft"
-                >
-                  <img
-                    src={src}
-                    alt="Social media creative produced by Bombay Blokes"
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-
 
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t pt-8 sm:grid-cols-4">
             {[
