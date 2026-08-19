@@ -173,7 +173,7 @@ function TerminalCard() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    const full = typedLines[index % typedLines.length];
+    const full = typedLines[index % typedLines.length]!;
     if (text.length < full.length) {
       const t = setTimeout(() => setText(full.slice(0, text.length + 1)), 28);
       return () => clearTimeout(t);
