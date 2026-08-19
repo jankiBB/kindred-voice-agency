@@ -59,7 +59,7 @@ const stacks = [
 
 export function StackTabs() {
   const [active, setActive] = useState(0);
-  const s = stacks[active];
+  const s = stacks[active]!;
 
   return (
     <section id="stack" className="border-y bg-sand">
